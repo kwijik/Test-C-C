@@ -4,7 +4,7 @@
 bool
 cp_cpp(const std::string &src, const std::string &dst)
 {
-	std::ignore = src; // переменная может взять в себя что угодно!
+	std::ignore = src; 
 	std::ignore = dst;
 
 	std::ifstream  fin(src, std::ios::binary); 

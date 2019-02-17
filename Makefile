@@ -8,7 +8,7 @@ LDFLAGS=
 all: ex1
 
 ex1: ex1main.cpp.o cp.c.o cp.cpp.o
-	$(LD) -o $@ $< $(LDFLAGS)
+	$(LD) -o $@ $^ $(LDFLAGS)
 
 ex2: ex2main.c
 	$(LD) -o $@ $< $(LDFLAGS)

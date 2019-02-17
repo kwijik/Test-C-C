@@ -4,10 +4,18 @@
 bool
 cp_cpp(const std::string &src, const std::string &dst)
 {
-	std::ignore = src;
+	std::ignore = src; // переменная может взять в себя что угодно!
 	std::ignore = dst;
 
-	/* Please use ofstream and ifstream */
+	std::ifstream  fin(src, std::ios::binary); 
 
-	return false;
+	//std::ofstream  fout(dst,   std::ios::binary); 
+	std::ofstream  fout(dst,  std::ios::binary | std::ios::app); 
+
+
+	if (fin.good() && fout.good()){ 
+		fout << fin.rdbuf();
+		return true;
+	}
+
 }
